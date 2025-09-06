@@ -14,9 +14,43 @@
   font-size: $h2;
 }
 
+// //   original -- does not work
+// //   if you leave as is, in the
+// //   _media-queries.scss partial add
+// //   padding-top: 0;
+// //   to the .site-nav rule inside the media query
+// //   for an alternate fix
+
+// .site-nav {                     // not working
+//   padding-top: $nav-padding;    // not working
+// }                               // not working
+
+// //   we could just remove the .site-nav rule here
+// //   but in past incarnations, Jan 2019 on the wayback machine
+// //   by inspection this worked, we had just ` margin-top: $space-2; `
+// //   though  margin-top: 0;  seems to be working, go figure.
+// //   or as I say, elminate the whole rule at this location in the file
+// //
+// //   this rule is good
 .site-nav {
-  padding-top: $nav-padding;
+  margin-top: $space-2;
 }
+
+// //   If we do that, we want to remove or
+// //   rename the $nav-padding; variable.
+// //   So there's also a separate commit to remove it.
+
+// //   this would work also, use $nav-padding instead of #space-2
+// //   still setting margin-top instead of padding-top
+// .site-nav {
+//   margin-top: $nav-padding;
+// }
+
+// //  an additional tweak, in _media-queries.scss
+// //  you can lift the left nav text upwards by
+// //  changing the ` .site-header .site-nav ` rule
+// //                   margin-top: .25rem;
+// // to something like .2, .15, ...,  .05rem;
 
 .site-header nav a {
   color: $nav-color;
